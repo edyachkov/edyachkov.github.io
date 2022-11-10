@@ -4,7 +4,7 @@
   let user = window.Telegram.WebApp.initDataUnsafe.user.first_name + "\n" +
              window.Telegram.WebApp.initDataUnsafe.user.last_name
 
-  window.Telegram.WebApp.MainButton.text = "ЗАКАЗАТЬ СЪЁМКУ";
+  window.Telegram.WebApp.MainButton.text = "ЗАКАааааааЗАТЬ СЪЁМКУ";
   window.Telegram.WebApp.MainButton.isVisible = true;
   window.Telegram.WebApp.MainButton.color = "#212121";
   window.Telegram.WebApp.MainButton.onClick(() => {
