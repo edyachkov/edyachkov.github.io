@@ -17,6 +17,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --date-picker-background: #4e4e4e;
+  --date-picker-foreground: #d1d1d1;
 }
 
 a {

@@ -1,6 +1,9 @@
 <script lang="ts">
   import 'tw-elements';
 
+  import { DateInput } from 'date-picker-svelte';
+  let date = new Date();
+
   let user = window.Telegram.WebApp.initDataUnsafe.user.first_name + "\n" +
              window.Telegram.WebApp.initDataUnsafe.user.last_name
 
@@ -9,17 +12,24 @@
   window.Telegram.WebApp.MainButton.color = "#212121";
   window.Telegram.WebApp.MainButton.onClick(() => {
     window.Telegram.WebApp.MainButton.text = "ОТМЕНИТЬ СТАНЦИЮ"
+    window.Telegram.WebApp.showPopup({message:"Ghbdtn!", title: "dfdfgdfg"})
   })
 
   window.Telegram.WebApp.BackButton.isVisible = true;
 
+  
+
 </script>
+
+
 
   <div class="header">
     <button> Обо мне </button>
     <button> Портфолио </button>
     <button> Записаться </button>
   </div>
+
+  <DateInput bind:value={date} />
 
   <div id="carouselExampleControls" class="carousel slide relative" data-bs-ride="carousel">
     <div class="carousel-inner relative w-full overflow-hidden">
