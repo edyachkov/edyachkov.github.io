@@ -22,13 +22,14 @@
 </script>
 
 
+<div class="back">
 
   <div class="header">
     <button> Обо мне </button>
     <button> Портфолио </button>
     <button> Записаться </button>
   </div>
-
+kkkkk
   <DateInput bind:value={date} />
 
   {user}
@@ -77,7 +78,10 @@
     </button>
   </div>
 
+</div>
+
 <style>
+
   .header{
     position: absolute;
     top: 0px;
@@ -98,4 +102,15 @@
   .read-the-docs {
     color: #888;
   }
+
+  .back{
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(41, 41, 41);
+
+  }
+
 </style>
