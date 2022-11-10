@@ -5,14 +5,14 @@
   let date = new Date();
 
   let user = window.Telegram.WebApp.initDataUnsafe.user.first_name + "\n" +
-             window.Telegram.WebApp.initDataUnsafe.user.last_name
+             window.Telegram.WebApp.initDataUnsafe.user.last_name+ "("+window.Telegram.WebApp.initDataUnsafe.user.username+")"
 
   window.Telegram.WebApp.MainButton.text = "ЗАКpppppppЗАТЬ СЪЁМКУ";
   window.Telegram.WebApp.MainButton.isVisible = true;
   window.Telegram.WebApp.MainButton.color = "#212121";
   window.Telegram.WebApp.MainButton.onClick(() => {
     window.Telegram.WebApp.MainButton.text = "ОТМЕНИТЬ СТАНЦИЮ"
-    window.Telegram.WebApp.showPopup({message:"Ghbdtn!", title: "dfdfgdfg"})
+    window.Telegram.WebApp.showAlert({message:"Ghbdtn!", title: "dfdfgdfg"})
   })
 
   window.Telegram.WebApp.BackButton.isVisible = true;
