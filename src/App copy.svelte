@@ -8,12 +8,13 @@
 
 	let selectedRoute = "modal";
 
-	let tgUserInfo = window.Telegram.WebApp.initDataUnsafe.user
-
-	let user = {
-		name: `${tgUserInfo.first_name} ${tgUserInfo.last_name}`,
-		login: tgUserInfo.username
-	}
+	let user =
+		window.Telegram.WebApp.initDataUnsafe.user.first_name +
+		"\n" +
+		window.Telegram.WebApp.initDataUnsafe.user.last_name +
+		"(" +
+		window.Telegram.WebApp.initDataUnsafe.user.username +
+		")";
 
 	window.Telegram.WebApp.MainButton.text = "Заказать съёмку";
 	window.Telegram.WebApp.MainButton.isVisible = true;
@@ -21,7 +22,7 @@
 	window.Telegram.WebApp.MainButton.onClick(() => {
 		modalWindow = true;
 	});
-	
+	window.Telegram.WebApp.MainButton.text = "ОТМЕНИТЬ СТАНЦИЮ";
 	window.Telegram.WebApp.showAlert({
 		message: "Ghbdtn!",
 		title: "dfdfgdfg",
@@ -31,24 +32,17 @@
 </script>
 
 <div class="back">
-
 	<div class="header">
 		<button> Обо мне </button>
 		<button> Портфолио </button>
 		<button> Записаться </button>
 	</div>
 
-	<!--DateInput bind:value={date} /-->
+	<DateInput bind:value={date} />
+
+	{user}
 
 	{ #if selectedRoute == "modal" }
-	<div 
-		class="modal">
-		Как тебя зовут, {user.login}?
-		<input class="input" value={user.name} type="text"/>
-	</div>
-	{ /if }
-
-	{ #if selectedRoute != "modal" }
 	<div
 		id="carouselExampleControls"
 		class="carousel slide relative"
@@ -96,9 +90,8 @@
 </div>
 
 <style>
-
 	.header {
-		margin: 5px;
+		position: absolute;
 		top: 0px;
 		left: 0px;
 		width: 100%;
@@ -124,9 +117,7 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		/*background-color: rgb(41, 41, 41);*/
-		background: url(back.jpg);
-		color: black;
+		background-color: rgb(41, 41, 41);
 	}
 
 	p {
@@ -135,18 +126,57 @@
 		animation-iteration-count: infinite;
 	}
 
-	.modal{
-		display: flex;
-		flex-direction: column;
+	/* The animation code */
+	@keyframes example {
+		from {
+			height: 100px;
+			width: 100px;
+		}
+
+		to {
+			height: 200px;
+			width: 200px;
+		}
+
+		77% {
+			height: 300px;
+			width: 300px;
+		}
 	}
 
-	input{
-		margin: 5px 20% 5px 20%;
-		padding: 5px;
-		border-radius: 5px;
-		text-align: center;
-		background: none;
-		border: 2px solid black;
-	}
+	/* The element to apply the animation to */
+	div {
+		/* Specify a name for the @keyframes animation */
+		animation-name: example;
 
+		/*  */
+		animation: name duration timing-function delay iteration-count direction
+			fill-mode play-state;
+
+		/* Specifies a delay for the start of an animation */
+		animation-delay: time|initial|inherit; /* default: 1s */
+
+		/* Specifies whether an animation should be played */
+		animation-direction: forwards|backwards|alternate; /* default: forwards */
+
+		/* Specifies how long time an animation should take to complete one cycle */
+		animation-duration: time|initial|inherit; /* default: 0s */
+
+		/* Specifies a style for the element when the animation is not playing (before it starts, after it ends, or both) */
+		animation-fill-mode: none|forwards|backwards|both|initial|inherit;
+
+		/* Specifies the number of times an animation should be played */
+		animation-iteration-count: number|infinite|initial|inherit; /* default: 1s */
+
+		/* Specifies the name of the @keyframes animation */
+		animation-name: keyframename|none|initial|inherit; /* default: none */
+
+		/* Specifies whether the animation is running or paused */
+		animation-play-state: paused|running|initial|inherit; /* default: running */
+
+		/* Specifies the speed curve of the animation */
+		animation-timing-function: linear|ease|ease-in|ease-out|
+			ease-in-out|step-start| step-end|steps(int, start|end) |
+			cubic-bezier(n, n, n, n) |initial|inherit; /* default: linear */
+	}
 </style>
