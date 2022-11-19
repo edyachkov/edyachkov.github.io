@@ -124,8 +124,8 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		/*background-color: rgb(41, 41, 41);*/
-		background: url(back.jpg);
+		background-color: red;
+		/*background: url(back.jpg);*/
 		color: black;
 	}
 
