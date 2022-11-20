@@ -25,10 +25,10 @@
 
 	window.Telegram.WebApp.expand();
 	
-	window.Telegram.WebApp.showAlert({
-		message: "Ghbdtn!",
+	/*window.Telegram.WebApp.showAlert({
+		message: "!",
 		title: "dfdfgdfg",
-	});
+	});*/
 
 	window.Telegram.WebApp.BackButton.isVisible = true;
 
@@ -39,12 +39,18 @@
 
 </script>
 
-<img class="bckg" src="back.jpg">
+{ #if selectedRoute == "modal" }
+	<img class="bckg" src="back.png">
+{ /if }
+
+{ #if selectedRoute == "person" }
+	<img class="bckg" src="person-background.png">
+{ /if }
 
 <div class="back">
 
 	<div class="header">
-		<button class="header-button" on:click={()=>changeRoute("write")}> Обо мне </button>
+		<button class="header-button" on:click={()=>changeRoute("person")}> Обо мне </button>
 		<button class="header-button" on:click={()=>changeRoute("modal")}> Портфолио </button>
 	</div>
 
@@ -58,7 +64,7 @@
 	</div>
 	{ /if }
 
-	{ #if selectedRoute != "modal" }
+	{ #if selectedRoute == "sdasd" }
 	<div class="rounded">
 	<div
 		id="carouselExampleControls"
@@ -107,7 +113,7 @@
 
 </div>
 
-<style>
+<style lang="scss">
 
 	.header {
 		margin: 5px;
@@ -166,8 +172,7 @@
 	}
 
 	.bckg{
-		width: 100%;
-		height: 100%;
+		width: 100%; 
 		position: absolute;
 		top: 0px;
 		left: 0px;
@@ -175,7 +180,8 @@
 
 	.rounded{
 		border-radius: 10px !important; 
-		box-shadow: 2px 2px 20px #000000;
+		box-shadow: 1px 5px 10px #000000;
+		margin-top: 50px;
 	}
 
 	.block{
@@ -184,7 +190,13 @@
 
 	.header-button{
 		color: rgb(27, 27, 27);
-		border: 0px solid rgb(27, 27, 27);
+		border-bottom: 1px solid rgb(200, 200, 200);
+		box-sizing: content-box;
+		margin: 10px;
+	}
+
+	.header-button:hover{
+		border-bottom: 1px solid rgb(27, 27, 27);
 	}
 
 </style>
