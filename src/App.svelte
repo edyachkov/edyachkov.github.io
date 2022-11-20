@@ -4,7 +4,7 @@
 	import { DateInput } from "date-picker-svelte";
 	let date = new Date();
 
-	let modatWindow = false; // модальное окно записи
+	let modalWindow = false; // модальное окно записи
 
 	let selectedRoute = "modal";
 
@@ -29,6 +29,11 @@
 	});
 	window.Telegram.WebApp.BackButton.isVisible = true;
 
+	function changeRoute( route ){
+		console.log( route )
+		selectedRoute = route;
+	}
+
 </script>
 
 <!--img class="bckg" src="back.png"-->
@@ -36,9 +41,8 @@
 <div class="back">
 
 	<div class="header">
-		<button> Обо мне </button>
-		<button> Портфолио </button>
-		<button> Записаться </button>
+		<button class="header-button" on:click={()=>changeRoute("modal")}> Обо мне </button>
+		<button class="header-button" on:click={()=>changeRoute('jjjjjj')}> Портфолио </button>
 	</div>
 
 	<!--DateInput bind:value={date} /-->
@@ -52,6 +56,7 @@
 	{ /if }
 
 	{ #if selectedRoute != "modal" }
+	<div class="rounded">
 	<div
 		id="carouselExampleControls"
 		class="carousel slide relative"
@@ -93,6 +98,7 @@
 			<span class="visually-hidden">Next</span>
 		</button>
 	</div>
+	</div>
 
 	{/if}
 
@@ -127,15 +133,12 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		/*background-color: red;*/
-		/*background: url(back.png);
-		background-size: cover;*/
 		background-image:
-    linear-gradient(rgb(27, 27, 27), rgba(255, 255, 255, 0.73)),
-    url('back.png');
-    background-size: cover;
-    color: white;
-    padding: 20px;
+    	linear-gradient(rgb(27, 27, 27) 0%, rgba(255, 255, 255, 0.73) 20%, rgba(255, 255, 255, 0.73) 80%, rgb(27, 27, 27) 100%),
+    	url('back.png');
+    	background-size: cover;
+    	color: white;
+    	padding: 20px;
 		color: black;
 	}
 
@@ -165,6 +168,18 @@
 		position: absolute;
 		top: 0px;
 		left: 0px;
+	}
+
+	.rounded{
+		border-radius: 10px !important;
+	}
+
+	.block{
+		border-radius: 10px !important;
+	}
+
+	.header-button{
+		color: white;
 	}
 
 </style>
