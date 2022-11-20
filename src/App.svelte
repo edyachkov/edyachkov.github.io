@@ -30,6 +30,8 @@
 
 </script>
 
+<img class="bckg" src="back.png">
+
 <div class="back">
 
 	<div class="header">
@@ -125,8 +127,8 @@
 		height: 100%;
 		width: 100%;
 		/*background-color: red;*/
-		background: url(back.png);
-		background-size: cover;
+		/*background: url(back.png);
+		background-size: cover;*/
 		color: black;
 	}
 
@@ -148,6 +150,14 @@
 		text-align: center;
 		background: none;
 		border: 2px solid black;
+	}
+
+	.bckg{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0px;
+		left: 0px;
 	}
 
 </style>
