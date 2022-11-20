@@ -131,7 +131,7 @@
 		/*background: url(back.png);
 		background-size: cover;*/
 		background-image:
-    linear-gradient(rgb(40, 40, 40), rgba(255, 255, 255, 0.73)),
+    linear-gradient(rgb(27, 27, 27), rgba(255, 255, 255, 0.73)),
     url('back.png');
     background-size: cover;
     color: white;
