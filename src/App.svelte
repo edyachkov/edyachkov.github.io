@@ -22,6 +22,8 @@
 	window.Telegram.WebApp.MainButton.onClick(() => {
 		modalWindow = true;
 	});
+
+	window.Telegram.WebApp.expand();
 	
 	window.Telegram.WebApp.showAlert({
 		message: "Ghbdtn!",
@@ -36,13 +38,13 @@
 
 </script>
 
-<!--img class="bckg" src="back.png"-->
+<img class="bckg" src="back.jpg">
 
 <div class="back">
 
 	<div class="header">
-		<button class="header-button" on:click={()=>changeRoute("modal")}> Обо мне </button>
-		<button class="header-button" on:click={()=>changeRoute('jjjjjj')}> Портфолио </button>
+		<button class="header-button" on:click={()=>changeRoute("write")}> Обо мне </button>
+		<button class="header-button" on:click={()=>changeRoute("modal")}> Портфолио </button>
 	</div>
 
 	<!--DateInput bind:value={date} /-->
@@ -51,7 +53,7 @@
 	<div 
 		class="modal">
 		Как тебя зовут, {user.login}?
-		<input class="input" value={user.name} type="text"/>
+		<input id="nameInput" class="input" autofocus value={user.name} type="text"/>
 	</div>
 	{ /if }
 
@@ -133,9 +135,9 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		background-image:
-    	linear-gradient(rgb(27, 27, 27) 0%, rgba(255, 255, 255, 0.73) 20%, rgba(255, 255, 255, 0.73) 80%, rgb(27, 27, 27) 100%),
-    	url('back.png');
+		/*background-image:
+    	/*linear-gradient(rgb(27, 27, 27) 0%, rgba(255, 255, 255, 0.73) 20%), rgba(255, 255, 255, 0.73) 20%,*/
+    	/*url('back.jpg');*/
     	background-size: cover;
     	color: white;
     	padding: 20px;
@@ -179,7 +181,8 @@
 	}
 
 	.header-button{
-		color: white;
+		color: rgb(27, 27, 27);
+		border: 0px solid rgb(27, 27, 27);
 	}
 
 </style>
