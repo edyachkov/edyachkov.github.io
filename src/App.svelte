@@ -19,27 +19,37 @@
 	window.Telegram.WebApp.MainButton.isVisible = true;
 	window.Telegram.WebApp.MainButton.color = "#e8e8e8";
 	window.Telegram.WebApp.MainButton.textColor = "#000000";
-	window.Telegram.WebApp.MainButton.onClick(() => {
-		modalWindow = true;
-	});
+	window.Telegram.WebApp.MainButton.onClick( openWritingWindow );
 
-	window.Telegram.WebApp.expand();
-	
-	/*window.Telegram.WebApp.showAlert({
-		message: "!",
-		title: "dfdfgdfg",
-	});*/
+	function openWritingWindow(){
+		changeRoute( "writing" );
+	}
+
+	function openSuccessDialog(){
+
+		window.Telegram.WebApp.showAlert(
+			"Вы записаны на самую лучшую фотосессию в вашей жизни!"
+		);
+
+		window.Telegram.WebApp.MainButton.text = "Записаться";
+
+	}
 
 	window.Telegram.WebApp.BackButton.isVisible = true;
 
 	function changeRoute( route ){
-		console.log( route )
+
 		selectedRoute = route;
+
+		if ( route == "writing" ){
+			window.Telegram.WebApp.MainButton.onClick( openSuccessDialog ); 
+		}
+
 	}
 
 </script>
 
-{ #if selectedRoute == "modal" }
+{ #if selectedRoute == "portfolio" || selectedRoute == "writing" }
 	<img class="bckg" src="back.png">
 { /if }
 
@@ -51,12 +61,12 @@
 
 	<div class="header">
 		<button class="header-button" on:click={()=>changeRoute("person")}> Обо мне </button>
-		<button class="header-button" on:click={()=>changeRoute("modal")}> Портфолио </button>
+		<button class="header-button" on:click={()=>changeRoute("portfolio")}> Портфолио </button>
 	</div>
 
 	<!--DateInput bind:value={date} /-->
 
-	{ #if selectedRoute == "modal" }
+	{ #if selectedRoute == "writing" }
 	<div 
 		class="modal">
 		Как тебя зовут, {user.login}?
@@ -64,7 +74,7 @@
 	</div>
 	{ /if }
 
-	{ #if selectedRoute == "sdasd" }
+	{ #if selectedRoute == "portfolio" }
 	<div class="rounded">
 	<div
 		id="carouselExampleControls"
