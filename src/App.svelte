@@ -29,6 +29,7 @@
 		message: "Ghbdtn!",
 		title: "dfdfgdfg",
 	});
+
 	window.Telegram.WebApp.BackButton.isVisible = true;
 
 	function changeRoute( route ){
@@ -173,7 +174,8 @@
 	}
 
 	.rounded{
-		border-radius: 10px !important;
+		border-radius: 10px !important; 
+		box-shadow: 2px 2px 20px #000000;
 	}
 
 	.block{
