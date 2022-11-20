@@ -124,8 +124,9 @@
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		background-color: red;
-		/*background: url(back.jpg);*/
+		/*background-color: red;*/
+		background: url(back.png);
+		background-size: cover;
 		color: black;
 	}
 
