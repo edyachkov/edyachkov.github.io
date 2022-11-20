@@ -14,10 +14,11 @@
 		name: `${tgUserInfo.first_name} ${tgUserInfo.last_name}`,
 		login: tgUserInfo.username
 	}
-
+	//window.Telegram.WebApp.ThemeParams.bg_color = "#c4c4c4"
 	window.Telegram.WebApp.MainButton.text = "Заказать съёмку";
 	window.Telegram.WebApp.MainButton.isVisible = true;
-	window.Telegram.WebApp.MainButton.color = "#212121";
+	window.Telegram.WebApp.MainButton.color = "#e8e8e8";
+	window.Telegram.WebApp.MainButton.textColor = "#000000";
 	window.Telegram.WebApp.MainButton.onClick(() => {
 		modalWindow = true;
 	});
