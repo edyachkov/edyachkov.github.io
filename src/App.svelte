@@ -31,7 +31,7 @@
 
 </script>
 
-<img class="bckg" src="back.png">
+<!--img class="bckg" src="back.png"-->
 
 <div class="back">
 
@@ -130,6 +130,12 @@
 		/*background-color: red;*/
 		/*background: url(back.png);
 		background-size: cover;*/
+		background-image:
+    linear-gradient(rgb(30, 30, 30), rgba(255, 255, 255, 0.73)),
+    url('back.png');
+    background-size: cover;
+    color: white;
+    padding: 20px;
 		color: black;
 	}
 
