@@ -1,7 +1,8 @@
 <script lang="ts">
-	import "tw-elements";
 
+	import "tw-elements";
 	import { DateInput } from "date-picker-svelte";
+
 	let date = new Date();
 
 	let modalWindow = false; // модальное окно записи
@@ -14,7 +15,7 @@
 		name: `${tgUserInfo.first_name} ${tgUserInfo.last_name}`,
 		login: tgUserInfo.username
 	}
-	//window.Telegram.WebApp.ThemeParams.bg_color = "#c4c4c4"
+
 	window.Telegram.WebApp.MainButton.text = "Заказать съёмку";
 	window.Telegram.WebApp.MainButton.isVisible = true;
 	window.Telegram.WebApp.MainButton.color = "#e8e8e8";
@@ -55,22 +56,41 @@
 
 { #if selectedRoute == "person" }
 	<img class="bckg" src="person-background.png">
+	<div class="right-panel"> 
+		<div class="info-text"> 
+			Меня зовут Эд и я круто-круто снимаю самые крутые фотки!
+		</div> </div>
+	<div class="left-panel"> 
+		<div class="info-text"> 
+			Живу в Островце, но ты можем пофоткаться хоть где!
+		</div>
+	</div>
 { /if }
 
 <div class="back">
 
 	<div class="header">
-		<button class="header-button" on:click={()=>changeRoute("person")}> Обо мне </button>
-		<button class="header-button" on:click={()=>changeRoute("portfolio")}> Портфолио </button>
+		<button 
+			class="header-button" 
+			on:click={()=>changeRoute("person")}> 
+			Обо мне 
+		</button>
+		<button 
+			class="header-button" 
+			on:click={()=>changeRoute("portfolio")}> 
+			Портфолио 
+		</button>
 	</div>
-
-	<!--DateInput bind:value={date} /-->
 
 	{ #if selectedRoute == "writing" }
 	<div 
 		class="modal">
 		Как тебя зовут, {user.login}?
 		<input id="nameInput" class="input" autofocus value={user.name} type="text"/>
+	</div>
+	<div >
+		На какое число тебя записать?
+		<DateInput/>
 	</div>
 	{ /if }
 
@@ -79,8 +99,8 @@
 	<div
 		id="carouselExampleControls"
 		class="carousel slide relative"
-		data-bs-ride="carousel"
-	>
+		data-bs-ride="carousel">
+
 		<div class="carousel-inner relative w-full overflow-hidden">
 			<div class="carousel-item active relative float-left w-full">
 				<img src="ph2.png" class="block w-full" alt="Wild Landscape" />
@@ -207,6 +227,43 @@
 
 	.header-button:hover{
 		border-bottom: 1px solid rgb(27, 27, 27);
+	}
+
+	.right-panel{
+		position: absolute;
+		top: 250px;
+		right: 0px;
+		width: 200px;
+		height: 100px;
+		background-color: #ffffff;
+		opacity: 0.5;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color:rgb(60, 60, 60)0;
+		font-size: 12px;
+	}
+
+	.left-panel{
+		position: absolute;
+		bottom: 100px;
+		left: 0px;
+		width: 150px;
+		height: 100px;
+		background-color: #ffffff;
+		opacity: 0.5;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color:rgb(0, 0, 0)0;
+		font-size: 10px;
+	}
+
+	.info-text{
+		position: relative;
+		color:#000000; 
+		font-family: 'Andale Mono', monospace;
+		font-weight: bold;
 	}
 
 </style>
