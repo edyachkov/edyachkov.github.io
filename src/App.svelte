@@ -23,7 +23,9 @@
 	window.Telegram.WebApp.MainButton.onClick( openWritingWindow );
 
 	function openWritingWindow(){
+
 		changeRoute( "writing" );
+
 	}
 
 	function openSuccessDialog(){
@@ -90,7 +92,7 @@
 	</div>
 	<div >
 		На какое число тебя записать?
-		<DateInput/>
+		<DateInput />
 	</div>
 	{ /if }
 
