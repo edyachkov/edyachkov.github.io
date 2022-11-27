@@ -9,7 +9,7 @@
 
 	let modalWindow = false; // модальное окно записи
 
-	let selectedRoute = "modal";
+	let selectedRoute = "person";
 
 	let tgUserInfo = window.Telegram.WebApp.initDataUnsafe.user
 
@@ -52,9 +52,13 @@
 
 	}
 
+	function handleClick(e) {
+		console.log(e)
+	}
+
 </script>
 
-{ #if selectedRoute == "portfolio" || selectedRoute == "writing" }
+{ #if false}
 	<img class="bckg" src="back.png">
 { /if }
 
@@ -73,7 +77,7 @@
 
 <div class="back">
 
-	<div class="header">
+	<div class="header" style={ selectedRoute == "person" ? "color: black" : "color: gray" }>
 		<button 
 			class="header-button" 
 			on:click={()=>changeRoute("person")}> 
@@ -100,10 +104,10 @@
 
 	{ #if selectedRoute == "portfolio" }
 
-	<Gallery >
-		<img src="ph2.png" class="block w-full" alt="Wild Landscape" />
-		<img src="ph3.png" class="block w-full" alt="Camera" />
-		<img src="ph1.png" class="block w-full" alt="Exotic Fruits" />
+	<Gallery on:click={handleClick} >
+		<img src="ph2.png" />
+		<img src="ph3.png" />
+		<img src="ph1.png" />
 	</Gallery>
 
 	<!--div class="rounded">
@@ -162,20 +166,6 @@
 		left: 0px;
 		width: 100%;
 	}
-	.logo {
-		height: 6em;
-		padding: 1.5em;
-		will-change: filter;
-	}
-	.logo:hover {
-		filter: drop-shadow(0 0 2em #646cffaa);
-	}
-	.logo.svelte:hover {
-		filter: drop-shadow(0 0 2em #ff3e00aa);
-	}
-	.read-the-docs {
-		color: #888;
-	}
 
 	.back {
 		top: 0px;
@@ -186,10 +176,8 @@
 		/*background-image:
     	/*linear-gradient(rgb(27, 27, 27) 0%, rgba(255, 255, 255, 0.73) 20%), rgba(255, 255, 255, 0.73) 20%,*/
     	/*url('back.jpg');*/
-    	background-size: cover;
-    	color: white;
+    	background-size: cover; 
     	padding: 20px;
-		color: black;
 	}
 
 	p {
@@ -230,7 +218,6 @@
 	}
 
 	.header-button{
-		color: rgb(27, 27, 27);
 		border-bottom: 1px solid rgb(200, 200, 200);
 		box-sizing: content-box;
 		margin: 10px;
