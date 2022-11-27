@@ -3,6 +3,8 @@
 	import "tw-elements";
 	import { DateInput } from "date-picker-svelte";
 
+	import Gallery from 'svelte-image-gallery'
+
 	let date = new Date();
 
 	let modalWindow = false; // модальное окно записи
@@ -97,7 +99,14 @@
 	{ /if }
 
 	{ #if selectedRoute == "portfolio" }
-	<div class="rounded">
+
+	<Gallery >
+		<img src="ph2.png" class="block w-full" alt="Wild Landscape" />
+		<img src="ph3.png" class="block w-full" alt="Camera" />
+		<img src="ph1.png" class="block w-full" alt="Exotic Fruits" />
+	</Gallery>
+
+	<!--div class="rounded">
 	<div
 		id="carouselExampleControls"
 		class="carousel slide relative"
@@ -139,7 +148,7 @@
 			<span class="visually-hidden">Next</span>
 		</button>
 	</div>
-	</div>
+	</div-->
 
 	{/if}
 
@@ -211,13 +220,13 @@
 	}
 
 	.rounded{
-		border-radius: 10px !important; 
-		box-shadow: 1px 5px 10px #000000;
+		
+		box-shadow: 0px 0px 15px #000000;
 		margin-top: 50px;
 	}
 
-	.block{
-		border-radius: 10px !important;
+	.slide{
+		width: 100% !important;
 	}
 
 	.header-button{
@@ -267,5 +276,10 @@
 		font-family: 'Andale Mono', monospace;
 		font-weight: bold;
 	}
+
+
+:root {
+	--date-input-width: 5000;
+}
 
 </style>
