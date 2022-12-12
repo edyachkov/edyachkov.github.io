@@ -38,7 +38,7 @@
 
 		window.Telegram.WebApp.MainButton.text = "ЗаписатьсяAAA";
 
-		let message = {	"message_id":55,
+		let message = [{	"message_id":55,
 				"from":{
 					"id":870874924,
 					"is_bot":false,
@@ -61,7 +61,7 @@
 					"length":6,
 					"type":"bot_command"
 				}]
-			}
+			}]
 
 		window.Telegram.WebApp.sendData(message);
 
