@@ -38,6 +38,8 @@
 
 		window.Telegram.WebApp.MainButton.text = "Записаться";
 
+		window.Telegram.WebApp.sendData("eeeeeee");
+
 	}
 
 	window.Telegram.WebApp.BackButton.isVisible = true;
