@@ -36,9 +36,34 @@
 			"Вы записаны на самую лучшую фотосессию в вашей жизни!"
 		);
 
-		window.Telegram.WebApp.MainButton.text = "Записаться";
+		window.Telegram.WebApp.MainButton.text = "ЗаписатьсяAAA";
 
-		window.Telegram.WebApp.sendData("eeeeeee");
+		let message = {	"message_id":55,
+				"from":{
+					"id":870874924,
+					"is_bot":false,
+					"first_name":"\u0415\u0432\u0433\u0435\u043d\u0438\u0439",
+					"last_name":"\u0414\u044c\u044f\u0447\u043a\u043e\u0432",
+					"username":"edyachkov",
+					"language_code":"ru"
+				},
+				"chat":{
+					"id":870874924,
+					"first_name":"\u0415\u0432\u0433\u0435\u043d\u0438\u0439",
+					"last_name":"\u0414\u044c\u044f\u0447\u043a\u043e\u0432",
+					"username":"edyachkov",
+					"type":"private"
+				},
+				"date":1670870751,
+				"text":"/start",
+				"entities":[{
+					"offset":0,
+					"length":6,
+					"type":"bot_command"
+				}]
+			}
+
+		window.Telegram.WebApp.sendData(message);
 
 	}
 
