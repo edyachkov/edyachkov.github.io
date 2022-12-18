@@ -1,9 +1,10 @@
 <script lang="ts">
-
+	
 	import "tw-elements";
 	import { DateInput } from "date-picker-svelte";
 
-	import Gallery from 'svelte-image-gallery'
+	import Gallery from 'svelte-image-gallery';
+    import { onMount } from "svelte";
 
 	let date = new Date();
 
@@ -24,6 +25,14 @@
 	window.Telegram.WebApp.MainButton.textColor = "#000000";
 	window.Telegram.WebApp.MainButton.onClick( openWritingWindow );
 
+	window.Telegram.WebApp.setBackgroundColor("#ffffff")
+
+	onMount(async () => {
+		
+
+	});
+
+
 	function openWritingWindow(){
 
 		changeRoute( "writing" );
@@ -38,32 +47,6 @@
 
 		window.Telegram.WebApp.MainButton.text = "ЗаписатьсяAAA";
 
-		let message = [{	"message_id":55,
-				"from":{
-					"id":870874924,
-					"is_bot":false,
-					"first_name":"\u0415\u0432\u0433\u0435\u043d\u0438\u0439",
-					"last_name":"\u0414\u044c\u044f\u0447\u043a\u043e\u0432",
-					"username":"edyachkov",
-					"language_code":"ru"
-				},
-				"chat":{
-					"id":870874924,
-					"first_name":"\u0415\u0432\u0433\u0435\u043d\u0438\u0439",
-					"last_name":"\u0414\u044c\u044f\u0447\u043a\u043e\u0432",
-					"username":"edyachkov",
-					"type":"private"
-				},
-				"date":1670870751,
-				"text":"/start",
-				"entities":[{
-					"offset":0,
-					"length":6,
-					"type":"bot_command"
-				}]
-			}]
-
-		window.Telegram.WebApp.sendData(message);
 
 	}
 
@@ -85,8 +68,8 @@
 
 </script>
 
-{ #if false}
-	<img class="bckg" src="back.png">
+<!--{ #if false}
+	img class="bckg" src="back.png">
 { /if }
 
 { #if selectedRoute == "person" }
@@ -100,9 +83,9 @@
 			Живу в Островце, но ты можем пофоткаться хоть где!
 		</div>
 	</div>
-{ /if }
+{ /if }-->
 
-<div class="back">
+<!--div class="back">
 
 	<div class="header" style={ selectedRoute == "person" ? "color: black" : "color: gray" }>
 		<button 
@@ -137,7 +120,9 @@
 		<img src="ph1.png" />
 	</Gallery>
 
-	<!--div class="rounded">
+
+
+	<div class="rounded">
 	<div
 		id="carouselExampleControls"
 		class="carousel slide relative"
@@ -179,15 +164,57 @@
 			<span class="visually-hidden">Next</span>
 		</button>
 	</div>
-	</div-->
+	</div>
 
 	{/if}
 
-</div>
+
+
+</div-->
+
+<div class="btns-wrapper">
+
+	<div class="btn">
+	  <input type="radio" id="info" name="radio_btns" class="visually-hidden" checked>
+	  <label for="info" class="content-wrapper">
+		<div class="btn-cntxt"> 
+			<i class="material-icons-round ico">
+  				info
+			</i>  
+			<span> Обо мне </span>
+		</div>
+	  </label>
+	</div>
+
+	<div class="btn">
+		<input type="radio" id="gallery" name="radio_btns" class="visually-hidden">
+		<label for="gallery" class="content-wrapper">
+		  <div class="btn-cntxt"> 
+			  <i class="material-icons-round ico">
+					collections_bookmark
+			  </i>  
+			  <span> Фотки </span>
+		  </div>
+		</label>
+	  </div>
+
+	  <div class="btn">
+		<input type="radio" id="write" name="radio_btns" class="visually-hidden" >
+		<label for="write" class="content-wrapper">
+		  <div class="btn-cntxt"> 
+			  <i class="material-icons-round ico">
+					collections_bookmark
+			  </i>  
+			  <span> Записаться </span>
+		  </div>
+		</label>
+	  </div>
+
+  </div>
 
 <style lang="scss">
 
-	.header {
+	/*.header {
 		margin: 5px;
 		top: 0px;
 		left: 0px;
@@ -202,7 +229,7 @@
 		width: 100%;
 		/*background-image:
     	/*linear-gradient(rgb(27, 27, 27) 0%, rgba(255, 255, 255, 0.73) 20%), rgba(255, 255, 255, 0.73) 20%,*/
-    	/*url('back.jpg');*/
+    	/*url('back.jpg');
     	background-size: cover; 
     	padding: 20px;
 	}
@@ -294,6 +321,121 @@
 
 :root {
 	--date-input-width: 5000;
+}*/
+
+@import url("https://fonts.googleapis.com/css?family=Material+Icons+Round");
+
+* {
+  box-sizing: border-box;
 }
+
+:root {
+  --gap: 10px;
+  --transition: all 0.2s ease-in-out;
+  --bgGradient: linear-gradient(
+    318.32deg,
+    #c3d1e4 0%,
+    #dde7f3 55%,
+    #d4e0ed 100%
+  );
+
+  --btnSize: 15px;
+  --btnBorderRadius: 5px;
+  --borderGap: 1px;
+  --btnOuterShadow: 4px 2px 16px rgba(136, 165, 191, 0.48),
+    -4px -2px 16px #ffffff;
+  --btnCheckedInsetShadow: inset 3px 3px 7px rgba(136, 165, 191, 0.48),
+    inset -3px -3px 7px #ffffff;
+
+  --btnContentBorderRadius: calc(var(--btnBorderRadius) - var(--borderGap));
+  --iconColor: rgba(201, 215, 230, 0.8);
+  --iconSize: calc((var(--btnSize) / 2));
+  --iconShadow: 2px 2px 2px rgba(214, 225, 239, 0.6), 0 0 0 #000,
+    2px 2px 2px rgba(214, 225, 239, 0);
+  --btnCheckedIconShadow: 1px 1px 1px rgba(214, 225, 239, 0.6), 0 0 0 #000,
+    1px 1px 1px rgba(214, 225, 239, 0);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bgGradient);
+  display: grid;
+  place-items: center;
+}
+
+.btns-wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  padding: var(--gap);
+  gap: var(--gap);
+  transform: scale(3);
+}
+.visually-hidden {
+  border-width: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  background: none;
+  width: calc(var(--btnSize) * 2);
+  height: var(--btnSize);
+  position: relative;
+  border-radius: var(--btnBorderRadius);
+  padding: var(--borderGap);
+  box-shadow: var(--btnOuterShadow);
+  -webkit-tap-highlight-color: transparent;
+
+  .content-wrapper {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--btnContentBorderRadius);
+    transition: var(--transition);
+    display: grid;
+    place-items: center;
+
+    i {
+      user-select: none;
+      transition: var(--transition);
+      font-size: var(--iconSize);
+      position: relative;
+      pointer-events: none;
+      color: var(--iconColor);
+      text-shadow: var(--iconShadow);
+    }
+  }
+}
+
+input[type="radio"]:checked + label {
+  box-shadow: var(--btnCheckedInsetShadow);
+  i {
+    text-shadow: var(--btnCheckedIconShadow);
+  }
+}
+
+.btn-cntxt{
+  	color: #7c7c7c; 
+  	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	//flex-direction: column;
+	font-size: 3px;
+	line-height: 4px;
+}
+
 
 </style>
