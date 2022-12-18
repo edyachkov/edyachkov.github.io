@@ -171,7 +171,11 @@
 
 
 </div--> 
+<div class="main">
+	<img src="ed.png">
 <p> Eduard Ph </p>
+</div>
+
 <div class="header"> 
 <button class="btn-small"><p> Обо мне </p></button>
 <button class="btn-small"><p> Портфолио </p></button>
@@ -413,6 +417,17 @@ input[type="radio"]:checked + label {
 
 button{
 	margin: 5px;
+}
+
+img{
+	border: none !important;
+	width: 60%;
+}
+
+.main{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
 </style>
