@@ -25,7 +25,7 @@
 	window.Telegram.WebApp.MainButton.textColor = "#000000";
 	window.Telegram.WebApp.MainButton.onClick( openWritingWindow );
 
-	window.Telegram.WebApp.setBackgroundColor("#ffffff")
+	window.Telegram.WebApp.setHeaderColor(window.Telegram.WebApp.themeParams.secondary_bg_color)
 
 	onMount(async () => {
 		
@@ -170,20 +170,12 @@
 
 
 
-</div-->
-<div >
-<p>Inspired by <a href="https://codepen.io/tmrDevelops/pen/VeRvKX" target="_blank">Imperfect Buttons</a></p>
-<button class="btn-large">Large</button>
-<button>Default</button>
-<button class="btn-small"><p>Small</p></button>
-<a href="#" class="paper-btn">Link</a>
-<div class="row">
-  <div class="col-6 col">
-    <button class="btn-block">Block level</button>
-  </div>
-</div>
-<button class="disabled">Disabled</button>
-<button disabled>Disabled</button>
+</div--> 
+<p> Eduard Ph </p>
+<div class="header"> 
+<button class="btn-small"><p> Обо мне </p></button>
+<button class="btn-small"><p> Портфолио </p></button>
+<button class="btn-small"><p> Запись </p></button>
 </div>
 <style lang="scss">
 
@@ -410,5 +402,17 @@ input[type="radio"]:checked + label {
 	line-height: 4px;
 }
 
+.header{
+	position: absolute;
+	top: 5px;
+	right: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+button{
+	margin: 5px;
+}
 
 </style>
