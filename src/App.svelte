@@ -175,7 +175,7 @@
 <p>Inspired by <a href="https://codepen.io/tmrDevelops/pen/VeRvKX" target="_blank">Imperfect Buttons</a></p>
 <button class="btn-large">Large</button>
 <button>Default</button>
-<button class="btn-small">Small</button>
+<button class="btn-small"><p>Small</p></button>
 <a href="#" class="paper-btn">Link</a>
 <div class="row">
   <div class="col-6 col">
