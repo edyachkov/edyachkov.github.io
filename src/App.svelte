@@ -171,47 +171,20 @@
 
 
 </div-->
-
-<div class="btns-wrapper">
-
-	<div class="btn">
-	  <input type="radio" id="info" name="radio_btns" class="visually-hidden" checked>
-	  <label for="info" class="content-wrapper">
-		<div class="btn-cntxt"> 
-			<i class="material-icons-round ico">
-  				info
-			</i>  
-			<span> Обо мне </span>
-		</div>
-	  </label>
-	</div>
-
-	<div class="btn">
-		<input type="radio" id="gallery" name="radio_btns" class="visually-hidden">
-		<label for="gallery" class="content-wrapper">
-		  <div class="btn-cntxt"> 
-			  <i class="material-icons-round ico">
-					collections_bookmark
-			  </i>  
-			  <span> Фотки </span>
-		  </div>
-		</label>
-	  </div>
-
-	  <div class="btn">
-		<input type="radio" id="write" name="radio_btns" class="visually-hidden" >
-		<label for="write" class="content-wrapper">
-		  <div class="btn-cntxt"> 
-			  <i class="material-icons-round ico">
-					collections_bookmark
-			  </i>  
-			  <span> Записаться </span>
-		  </div>
-		</label>
-	  </div>
-
+<div >
+<p>Inspired by <a href="https://codepen.io/tmrDevelops/pen/VeRvKX" target="_blank">Imperfect Buttons</a></p>
+<button class="btn-large">Large</button>
+<button>Default</button>
+<button class="btn-small">Small</button>
+<a href="#" class="paper-btn">Link</a>
+<div class="row">
+  <div class="col-6 col">
+    <button class="btn-block">Block level</button>
   </div>
-
+</div>
+<button class="disabled">Disabled</button>
+<button disabled>Disabled</button>
+</div>
 <style lang="scss">
 
 	/*.header {
@@ -322,7 +295,7 @@
 :root {
 	--date-input-width: 5000;
 }*/
-
+@import url(https://unpkg.com/papercss@1.9.0/dist/paper.min.css);
 @import url("https://fonts.googleapis.com/css?family=Material+Icons+Round");
 
 * {
@@ -335,24 +308,24 @@
   --bgGradient: linear-gradient(
     318.32deg,
     #c3d1e4 0%,
-    #dde7f3 55%,
+    #1a1a1a 55%,
     #d4e0ed 100%
   );
 
   --btnSize: 15px;
   --btnBorderRadius: 5px;
   --borderGap: 1px;
-  --btnOuterShadow: 4px 2px 16px rgba(136, 165, 191, 0.48),
-    -4px -2px 16px #ffffff;
-  --btnCheckedInsetShadow: inset 3px 3px 7px rgba(136, 165, 191, 0.48),
-    inset -3px -3px 7px #ffffff;
+  --btnOuterShadow: 4px 2px 16px rgba(66, 66, 66, 0.48),
+    -4px -2px 16px #282828;
+  --btnCheckedInsetShadow: inset 3px 3px 7px rgba(68, 68, 68, 0.48),
+    inset -3px -3px 7px #181818;
 
   --btnContentBorderRadius: calc(var(--btnBorderRadius) - var(--borderGap));
-  --iconColor: rgba(201, 215, 230, 0.8);
+  --iconColor: rgba(77, 77, 77, 0.8);
   --iconSize: calc((var(--btnSize) / 2));
-  --iconShadow: 2px 2px 2px rgba(214, 225, 239, 0.6), 0 0 0 #000,
+  --iconShadow: 2px 2px 2px rgba(85, 85, 85, 0.6), 0 0 0 rgb(62, 62, 62),
     2px 2px 2px rgba(214, 225, 239, 0);
-  --btnCheckedIconShadow: 1px 1px 1px rgba(214, 225, 239, 0.6), 0 0 0 #000,
+  --btnCheckedIconShadow: 1px 1px 1px rgba(26, 26, 26, 0.6), 0 0 0 #000,
     1px 1px 1px rgba(214, 225, 239, 0);
 }
 
