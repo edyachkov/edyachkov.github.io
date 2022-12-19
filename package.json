@@ -29,6 +29,7 @@
     "date-picker-svelte": "^2.2.3",
     "node-sass": "^8.0.0",
     "sass": "^1.56.1",
+    "svelte-routing": "^1.6.0",
     "tw-elements": "^1.0.0-alpha12",
     "ui-neumorphism": "^1.1.3"
   }
