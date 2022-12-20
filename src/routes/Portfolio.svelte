@@ -18,10 +18,11 @@
         let htmlParentElement = document.getElementById("pages")
 
         let setting = {
-            width: window.innerWidth-50, // required parameter - base page width
-            height: 450,  // required parameter - base page height
+            width: window.innerWidth/2, // required parameter - base page width
+            height: 250,  // required parameter - base page height
             showCover: true, 
-            mobileScrollSupport: false
+            mobileScrollSupport: false,
+            usePortrait: false
         }
 
         const pageFlip = new PageFlip(htmlParentElement, setting);
