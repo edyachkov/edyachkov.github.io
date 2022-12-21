@@ -4,6 +4,8 @@
     <img src="ph3.png">
 </div-->
 
+<p>Публикации в журналах:</p>
+<br>
 <div class="magazine">
     <div id="pages" > 
 
@@ -22,14 +24,14 @@
 
         let setting = {
             width: window.innerWidth-60, // required parameter - base page width
-            height: 460,  // required parameter - base page height
+            height: 430,  // required parameter - base page height
             usePortrait: true,
             autoSize: false
         }
 
         const pageFlip = new PageFlip(htmlParentElement, setting);
 
-        pageFlip.loadFromImages(['ph1.png', 'ph2.png', 'ph3.png' ]);
+        pageFlip.loadFromImages(['ph4.png', 'ph1.png', 'ph2.png', 'ph3.png' ]);
 
     });
 
@@ -51,7 +53,7 @@
 }
 
 .pages{
-    height: 466px;
+    height: 436px;
     border: 0;
 }
 
