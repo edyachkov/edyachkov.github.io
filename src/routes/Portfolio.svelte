@@ -4,8 +4,11 @@
     <img src="ph3.png">
 </div-->
 
-<div id="pages">
+<div class="magazine">
+    <div id="pages" > 
 
+    </div>
+    <img class="pages" src="pages.png">
 </div>
 
 <script lang="ts">
@@ -18,11 +21,10 @@
         let htmlParentElement = document.getElementById("pages")
 
         let setting = {
-            width: window.innerWidth/2, // required parameter - base page width
-            height: 250,  // required parameter - base page height
-            showCover: true, 
-            mobileScrollSupport: false,
-            usePortrait: false
+            width: window.innerWidth-60, // required parameter - base page width
+            height: 460,  // required parameter - base page height
+            usePortrait: true,
+            autoSize: false
         }
 
         const pageFlip = new PageFlip(htmlParentElement, setting);
@@ -33,14 +35,24 @@
 
 </script>
 
-<style>
+<style lang="scss">
 
-img{
-    margin-top: 20px;
+.magazine{
+    display: flex;
+    background-color: rgb(147, 147, 147);
+    border: 0;
+    border-radius: 5px;
 }
 
 #pages{
-    padding: 0;
+    background-color: rgb(147, 147, 147);
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.pages{
+    height: 466px;
+    border: 0;
 }
 
 </style>
