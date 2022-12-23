@@ -4,7 +4,7 @@
     <img src="ph3.png">
 </div-->
 
-<p>Публикации в журналах:</p>
+<p> Публикации в журналах: </p>
 <br>
 <div class="magazine">
     <div id="pages" > 
@@ -31,7 +31,7 @@
 
         const pageFlip = new PageFlip(htmlParentElement, setting);
 
-        pageFlip.loadFromImages(['ph4.png', 'ph1.png', 'ph2.png', 'ph3.png' ]);
+        pageFlip.loadFromImages([ 'ph4.png', 'ph5.png', 'ph6.png', 'ph1.png', 'ph2.png', 'ph3.png', 'ph6.png', 'ph5.png' ]);
 
     });
 
