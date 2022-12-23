@@ -7,10 +7,12 @@
 <p> Публикации в журналах: </p>
 <br>
 <div class="magazine">
+    
     <div id="pages" > 
 
     </div>
     <img class="pages" src="pages.png">
+
 </div>
 
 <script lang="ts">

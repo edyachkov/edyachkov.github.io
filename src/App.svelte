@@ -14,7 +14,11 @@
 
 	});
 
+	
+
 	let webApp = window.Telegram.WebApp;
+
+	console.log(webApp)
 
 	let tgUserInfo = webApp.initDataUnsafe.user;
 
@@ -22,6 +26,10 @@
 		name: `${tgUserInfo.first_name} ${tgUserInfo.last_name}`,
 		login: tgUserInfo.username
 	}
+
+	console.log(webApp.initDataUnsafe)
+
+	let chatID = webApp.initDataUnsafe.chat.id
 
 	let backButton = webApp.BackButton;
 	backButton.isVisible = true;
@@ -37,7 +45,13 @@
 
 	function openWritingWindow(){
 
-		changeRoute( "writing" );
+		const requestOptions = {
+        	method: 'POST',
+        	headers: { 'Content-Type': 'application/json' },
+        	body: JSON.stringify({ chatID: chatID })
+    	};
+
+    	fetch('http://192.168.1.44:3000/book', requestOptions);
 
 	}
 
