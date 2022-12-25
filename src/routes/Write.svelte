@@ -1,15 +1,47 @@
-<!--div class="back">
+<div id="datepicker">
+	sss
+	<Datepicker />
+</div> 
 
-	{ #if selectedRoute == "writing" }
-	<div 
-		class="modal">
-		Как тебя зовут, {user.login}?
-		<input id="nameInput" class="input" autofocus value={user.name} type="text"/>
-	</div>
-	<div >
-		На какое число тебя записать?
-		<DateInput />
-	</div>
-	{ /if }
+<script>
 
-</div--> 
+import Datepicker from "praecox-datepicker";
+
+</script>
+
+<style>
+
+:root{
+--praecox-calendar-custom-width: 330px;
+--praecox-calendar-custom-height: 310px;
+--praecox-calendar-custom-inner-width: 310px;
+--praecox-calendar-custom-inner-height: 220px;
+--praecox-calendar-custom-head-height: 48px;
+--praecox-calendar-custom-icon-size: 20px;
+--praecox-calendar-custom-border-radius: 3px;
+--praecox-calendar-custom-font-family: sans-serif;
+--praecox-calendar-custom-number-font-family: "Open Sans", sans-serif;
+
+--praecox-calendar-custom-main-color: #939393;
+--praecox-calendar-custom-main-color-hover: #979797;
+--praecox-calendar-custom-main-color-active: #9b9b9b;
+--praecox-calendar-custom-focused-color: #12bc00;
+--praecox-calendar-custom-adjunctive-color: rgba(255, 255, 255, 0.1);
+--praecox-calendar-custom-secondary-color: rgba(86, 86, 86, 0.826);
+--praecox-calendar-custom-selected-color: #ffffff;
+
+--praecox-calendar-custom-weekend-color: #2e2e2e;
+--praecox-calendar-custom-outsidemonth-color: #000000;
+--praecox-calendar-custom-overbackground-color: #f5f8ff;
+
+--praecox-calendar-custom-font-main-color: #ffffff;
+--praecox-calendar-custom-font-disabled-color: #d7d7db;
+--praecox-calendar-custom-font-secondary-color: #b1b1b3;
+
+--praecox-calendar-custom-background: #232323;
+--praecox-calendar-custom-background-hover: #f5f8ff;
+--praecox-calendar-custom-border: 1px solid #919191;
+--praecox-calendar-custom-boxshadow: 0px 1px solid #ededf0;
+}
+
+</style>

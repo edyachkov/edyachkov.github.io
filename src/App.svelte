@@ -3,10 +3,13 @@
 	import { Router, Link, Route } from "svelte-routing";
 	import About from "./routes/About.svelte";
 	import Portfolio from "./routes/Portfolio.svelte";
+	import Write from "./routes/Write.svelte";
 	export let url = "";
+	
 
 	import "tw-elements";
     import { onMount } from "svelte";
+  
 
 	let selectedRoute = "person";
 
@@ -94,11 +97,17 @@
 				Портфолио
 			</button>
 		</Link>
+		<Link to="/write">
+			<button class="btn-small">
+				Записаться
+			</button>
+		</Link>
 	
 	</div>
 	<div>
 	  	<Route path="portfolio" component="{Portfolio}" />
 	  	<Route path="about" component="{About}" />
+		<Route path="write" component="{Write}" />
 	</div>
 </Router>
 
