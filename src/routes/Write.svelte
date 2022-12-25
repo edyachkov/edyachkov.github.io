@@ -9,7 +9,9 @@ import Datepicker from "praecox-datepicker";
 
 </script>
 
-<style>
+<style lang="scss">
+
+@import "https://fonts.cdnfonts.com/css/patrick-hand-sc";
 
 :root{
 --praecox-calendar-custom-width: 330px;
@@ -19,8 +21,8 @@ import Datepicker from "praecox-datepicker";
 --praecox-calendar-custom-head-height: 48px;
 --praecox-calendar-custom-icon-size: 20px;
 --praecox-calendar-custom-border-radius: 3px;
---praecox-calendar-custom-font-family: Tangerine;
---praecox-calendar-custom-number-font-family: "Open Sans", Tangerine;
+--praecox-calendar-custom-font-family: "Patrick Hand SC";
+--praecox-calendar-custom-number-font-family: "Patrick Hand SC", "Patrick Hand SC";
 
 --praecox-calendar-custom-main-color: #939393;
 --praecox-calendar-custom-main-color-hover: #979797;
