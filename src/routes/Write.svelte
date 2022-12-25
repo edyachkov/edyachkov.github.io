@@ -1,18 +1,43 @@
-<div id="datepicker">
-	sss
-	<Datepicker />
+<div class="main">
+
+	<button on:click={openSelectDateWindow}> 
+		{selected} 
+	</button>
+
+	{#if selectDateWindow}
+	<div class="datepicker" on:click={getResult}>
+		<Datepicker lang="ru" bind:selected bind:pickerDone reSelected/>
+	</div>
+	{/if}
+
+	<input type="time" id="appt" name="appt"
+       min="09:00" max="18:00" required>
+
 </div> 
 
 <script>
 
 import Datepicker from "praecox-datepicker";
 
+let selected = new Date();
+let pickerDone = false;
+
+let selectDateWindow = false
+
+function openSelectDateWindow(){
+	selectDateWindow = !selectDateWindow;
+}
+
+function getResult() {
+    if (pickerDone) {
+		selectDateWindow = false;
+    }
+  }
+
 </script>
 
 <style lang="scss">
-
-@import "https://fonts.cdnfonts.com/css/patrick-hand-sc";
-
+ 
 :root{
 --praecox-calendar-custom-width: 330px;
 --praecox-calendar-custom-height: 310px;
@@ -44,6 +69,29 @@ import Datepicker from "praecox-datepicker";
 --praecox-calendar-custom-background-hover: #f5f8ff;
 --praecox-calendar-custom-border: 1px solid #919191;
 --praecox-calendar-custom-boxshadow: 0px 1px solid #ededf0;
+}
+
+.datepicker{
+	position: absolute;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%);
+}
+
+.main{
+display: flex;
+justify-content: center;
+}
+
+#appt{
+	height: 40px;
+	margin: 5px;
+}
+
+button{
+	margin: 5px;
+	height: 40px;
+	font-size: 10px;
 }
 
 </style>
