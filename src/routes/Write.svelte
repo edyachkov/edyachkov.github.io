@@ -19,8 +19,8 @@ import Datepicker from "praecox-datepicker";
 --praecox-calendar-custom-head-height: 48px;
 --praecox-calendar-custom-icon-size: 20px;
 --praecox-calendar-custom-border-radius: 3px;
---praecox-calendar-custom-font-family: sans-serif;
---praecox-calendar-custom-number-font-family: "Open Sans", sans-serif;
+--praecox-calendar-custom-font-family: Tangerine;
+--praecox-calendar-custom-number-font-family: "Open Sans", Tangerine;
 
 --praecox-calendar-custom-main-color: #939393;
 --praecox-calendar-custom-main-color-hover: #979797;
