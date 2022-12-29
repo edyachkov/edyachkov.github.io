@@ -33,6 +33,7 @@
 	</div>
 
 	{#if selectDateWindow}
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div class="datepicker" 
 			 on:click={getResult} >
 			<Datepicker
@@ -56,6 +57,8 @@
 </div> 
 
 <script>
+// @ts-nocheck
+
 
 import { TimePicker } from 'svelte-time-picker'
 import Datepicker from "praecox-datepicker";
