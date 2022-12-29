@@ -2,15 +2,15 @@
 
 	<div class="form-group">
 		<div class="user-input"> 
-			<span class="label"> Имя: </span> 
+			<p class="label"> Имя: </p> 
 			<input value={user.name} type="text" placeholder="Введите имя"> 
 		</div>
 		<div class="user-input"> 
-			<span class="label"> Я найду Вас: </span> 
+			<p class="label"> Я найду Вас: </p> 
 			<input value={user.login} type="text" disabled> 
 		</div>
 		<div class="user-input"> 
-			<span class="label"> Время: </span> 
+			<p class="label"> Время: </p> 
 			<div>
 				<button on:click={openSelectDateWindow}> 
 					{ formatDate( selected ) }
