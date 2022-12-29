@@ -10,16 +10,22 @@
 	</div>
 	{/if}
 
-	<input type="time" id="appt" name="appt"
-       min="09:00" max="18:00" required>
+	<TimePicker bind:time />
+	
 
 </div> 
 
 <script>
 
+import TimePicker  from "svelte-touch-timepicker";
 import Datepicker from "praecox-datepicker";
 
 let selected = new Date();
+
+let time = new Date();
+
+$: _time = time.toLocaleTimeString("en-US");
+
 let pickerDone = false;
 
 let selectDateWindow = false
@@ -69,6 +75,23 @@ function getResult() {
 --praecox-calendar-custom-background-hover: #f5f8ff;
 --praecox-calendar-custom-border: 1px solid #919191;
 --praecox-calendar-custom-boxshadow: 0px 1px solid #ededf0;
+
+
+
+
+	--svtt-popup-bg-color: #232323;
+    --svtt-popup-color: rgb(255, 255, 255);
+    --svtt-popup-radius: 3px;
+    --svtt-font-size: 20px;
+    --svtt-button-color: white;
+    --svtt-button-bg-color: transparent;
+    --svtt-border: 1px solid #ffffff;
+    --svtt-button-box-shadow: none;
+    --svtt-bar-color: #232323;
+}
+
+li{
+	background-color: #12bc00 !important;
 }
 
 .datepicker{
@@ -79,8 +102,8 @@ function getResult() {
 }
 
 .main{
-display: flex;
-justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 #appt{
