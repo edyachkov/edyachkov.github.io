@@ -1,12 +1,27 @@
 <div class="main">
 
-	<button on:click={openSelectDateWindow}> 
-		{ formatDate( selected ) }
-	</button>
-
-	<button on:click={openSelectTimeWindow}> 
-		{hour}:{min} 
-	</button>
+	<div class="form-group">
+		<div class="user-input"> 
+			<span class="label"> Имя: </span> 
+			<input value={user.name} type="text" placeholder="Введите имя"> 
+		</div>
+		<div class="user-input"> 
+			<span class="label"> Я найду Вас: </span> 
+			<input value={user.login} type="text" disabled> 
+		</div>
+		<div class="user-input"> 
+			<span class="label"> Время: </span> 
+			<div>
+				<button on:click={openSelectDateWindow}> 
+					{ formatDate( selected ) }
+				</button>
+		
+				<button on:click={openSelectTimeWindow}> 
+					{hour}:{min} 
+				</button>
+			</div>
+		</div>
+	</div>
 
 	{#if selectDateWindow}
 		<div class="datepicker" 
@@ -40,6 +55,16 @@ let selected = new Date();
 
 let hour = new Date().getHours();
 let min = new Date().getMinutes();
+
+let webApp = window.Telegram.WebApp;
+
+	let tgUserInfo = webApp.initDataUnsafe.user;
+
+	let user = {
+		name: `${tgUserInfo.first_name} ${tgUserInfo.last_name}`,
+		login: tgUserInfo.username
+	}
+
 
 let options = {
 	bgColor: '#000000',
@@ -75,7 +100,7 @@ function formatDate( v ) {
     let month = date.getMonth() + 1;
     let day = date.getDate();
 
-    return `${month}/${day}/${year}`;
+    return `${day}/${month}/${year}`;
 
 }
 
@@ -154,6 +179,7 @@ function getResult() {
 .main{
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 }
 
 #appt{
@@ -165,6 +191,19 @@ button{
 	margin: 5px;
 	height: 40px;
 	font-size: 10px;
+}
+
+.user-input{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+.label{
+	margin: 5px;
+	text-align: end;
 }
 
 </style>
