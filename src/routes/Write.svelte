@@ -6,7 +6,7 @@
 			<input value={user.name} type="text" placeholder="Введите имя"> 
 		</div>
 		<div class="user-input"> 
-			<p class="label"> Я найду Вас: </p> 
+			<p class="label">  Telegram: </p> 
 			<input value={user.login} type="text" disabled> 
 		</div>
 		<div class="user-input"> 
@@ -21,6 +21,15 @@
 				</button>
 			</div>
 		</div>
+		<label for="paperRadios1" class="paper-radio">
+			<input type="radio" name="paperRadios" id="paperRadios1" value="option 1"> 
+			<span> Семейная съёмка </span>
+		  </label>
+		  <label for="paperRadios2" class="paper-radio">
+			<input type="radio" name="paperRadios" id="paperRadios2" value="option 2"> 
+			<span> Индивидуальная съёмка </span>
+		  </label>
+		
 	</div>
 
 	{#if selectDateWindow}
@@ -191,6 +200,7 @@ button{
 	margin: 5px;
 	height: 40px;
 	font-size: 10px;
+	background-color: #232323;
 }
 
 .user-input{

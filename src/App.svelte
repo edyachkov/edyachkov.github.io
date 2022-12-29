@@ -6,22 +6,16 @@
 	import Write from "./routes/Write.svelte";
 	export let url = "";
 	
-
 	import "tw-elements";
     import { onMount } from "svelte";
   
-
 	let selectedRoute = "person";
 
 	onMount(async () => {
 
 	});
 
-	
-
 	let webApp = window.Telegram.WebApp;
-
-	console.log(webApp)
 
 	let tgUserInfo = webApp.initDataUnsafe.user;
 
@@ -126,6 +120,9 @@
 
 button{
 	margin: 5px;
+	height: 40px;
+	font-size: 10px;
+	background-color: #232323;
 }
 
 a {
