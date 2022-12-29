@@ -1,27 +1,32 @@
 <div class="main">
 
 	<button on:click={openSelectDateWindow}> 
-		{selected} 
+		{ formatDate( selected ) }
 	</button>
 
 	<button on:click={openSelectTimeWindow}> 
-		{time} 
+		{hour}:{min} 
 	</button>
 
 	{#if selectDateWindow}
-	<div class="datepicker" on:click={getResult}>
-		<Datepicker lang="ru" bind:selected bind:pickerDone reSelected/>
-	</div>
+		<div class="datepicker" 
+			 on:click={getResult} >
+			<Datepicker
+				lang="ru"
+				bind:selected
+				bind:pickerDone
+				reSelected/>
+		</div>
 	{/if}
 
 	{#if selectTimeWindow}
-	<div class="timepicker" >
-		<TimePicker 
-			date={time} 
-			{options}
-			on:cancel={closeTimeWindow}
-  			on:ok={closeTimeWindow} />
-	</div>
+		<div class="timepicker" >
+			<TimePicker 
+				{options}
+				on:change={onChangeTime}
+				on:cancel={closeTimeWindow}
+  				on:ok={closeTimeWindow} />
+		</div>
 	{/if}
 
 </div> 
@@ -33,12 +38,18 @@ import Datepicker from "praecox-datepicker";
 
 let selected = new Date();
 
-let time = new Date(2020, 4, 15, 10, 13) // 10:13 AM
+let hour = new Date().getHours();
+let min = new Date().getMinutes();
 
 let options = {
-    bgColor: '#2e2e2e',
+	bgColor: '#000000',
     hasButtons: true, 
-  }
+	is24h: true,
+	minutesIncrement: 10,
+	buttonCancel: "<p> Отменить </p>",
+	buttonNow: "<p> Сброс </p>",
+	buttonOK: "<p> ОК </p>",
+}
 
 let pickerDone = false;
 
@@ -57,11 +68,31 @@ function openSelectTimeWindow(){
 	selectTimeWindow = !selectTimeWindow;
 }
 
+function formatDate( v ) {
+
+    let date = new Date(v);
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+
+    return `${month}/${day}/${year}`;
+
+}
+
+function onChangeTime( event ){
+
+    hour = new Date( event.detail ).getHours();
+	min = new Date( event.detail ).getMinutes();
+
+}
+
 function getResult() {
-    if (pickerDone) {
+
+    if ( pickerDone ) {
 		selectDateWindow = false;
     }
-  }
+
+}
 
 </script>
 
@@ -113,9 +144,11 @@ function getResult() {
     top: 50%;  /* position the top  edge of the element at the middle of the parent */
     left: 50%; /* position the left edge of the element at the middle of the parent */
     transform: translate(-50%, -50%);
-	border: 5px solid grey !important;
-	border-radius: 10px;
-	font-family: "Patrick Hand SC";
+	border: 1px solid grey !important;
+	border-radius: 3px;
+	font-family: "Patrick Hand SC"; 
+	background-color: #2e2e2e;
+	color: black;
 }
 
 .main{
