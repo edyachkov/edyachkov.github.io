@@ -4,34 +4,57 @@
 		{selected} 
 	</button>
 
+	<button on:click={openSelectTimeWindow}> 
+		{time} 
+	</button>
+
 	{#if selectDateWindow}
 	<div class="datepicker" on:click={getResult}>
 		<Datepicker lang="ru" bind:selected bind:pickerDone reSelected/>
 	</div>
 	{/if}
 
-	<TimePicker bind:time />
-	
+	{#if selectTimeWindow}
+	<div class="timepicker" >
+		<TimePicker 
+			date={time} 
+			{options}
+			on:cancel={closeTimeWindow}
+  			on:ok={closeTimeWindow} />
+	</div>
+	{/if}
 
 </div> 
 
 <script>
 
-import TimePicker  from "svelte-touch-timepicker";
+import { TimePicker } from 'svelte-time-picker'
 import Datepicker from "praecox-datepicker";
 
 let selected = new Date();
 
-let time = new Date();
+let time = new Date(2020, 4, 15, 10, 13) // 10:13 AM
 
-$: _time = time.toLocaleTimeString("en-US");
+let options = {
+    bgColor: '#2e2e2e',
+    hasButtons: true, 
+  }
 
 let pickerDone = false;
 
-let selectDateWindow = false
+let selectDateWindow = false;
+let selectTimeWindow = false;
 
 function openSelectDateWindow(){
 	selectDateWindow = !selectDateWindow;
+}
+
+function closeTimeWindow(){
+	selectTimeWindow = false;
+}
+
+function openSelectTimeWindow(){
+	selectTimeWindow = !selectTimeWindow;
 }
 
 function getResult() {
@@ -76,22 +99,6 @@ function getResult() {
 --praecox-calendar-custom-border: 1px solid #919191;
 --praecox-calendar-custom-boxshadow: 0px 1px solid #ededf0;
 
-
-
-
-	--svtt-popup-bg-color: #232323;
-    --svtt-popup-color: rgb(255, 255, 255);
-    --svtt-popup-radius: 3px;
-    --svtt-font-size: 20px;
-    --svtt-button-color: white;
-    --svtt-button-bg-color: transparent;
-    --svtt-border: 1px solid #ffffff;
-    --svtt-button-box-shadow: none;
-    --svtt-bar-color: #232323;
-}
-
-li{
-	background-color: #12bc00 !important;
 }
 
 .datepicker{
@@ -99,6 +106,16 @@ li{
     top: 50%;  /* position the top  edge of the element at the middle of the parent */
     left: 50%; /* position the left edge of the element at the middle of the parent */
     transform: translate(-50%, -50%);
+}
+
+.timepicker{
+	position: absolute;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%);
+	border: 5px solid grey !important;
+	border-radius: 10px;
+	font-family: "Patrick Hand SC";
 }
 
 .main{
