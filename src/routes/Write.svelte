@@ -23,11 +23,11 @@
 		</div>
 		<label for="paperRadios1" class="paper-radio">
 			<input type="radio" name="paperRadios" id="paperRadios1" value="option 1"> 
-			<p> Семейная съёмка </p>
+			<span> Семейная съёмка </span>
 		  </label>
 		  <label for="paperRadios2" class="paper-radio">
 			<input type="radio" name="paperRadios" id="paperRadios2" value="option 2"> 
-			<p> Индивидуальная съёмка </p>
+			<span> Индивидуальная съёмка </span>
 		  </label>
 		
 	</div>

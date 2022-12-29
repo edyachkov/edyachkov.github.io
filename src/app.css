@@ -50,6 +50,11 @@ h1 {
   text-align: center;
 }
 
+span{
+    font-family: "Patrick Hand SC" !important; 
+}
+
+
 @media (prefers-color-scheme: light) {
   :root { 
   }
