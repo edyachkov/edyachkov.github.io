@@ -32,6 +32,11 @@
 		
 	</div>
 
+	<input type="date" >
+
+	<input type="time" >
+
+
 	{#if selectDateWindow}
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div class="datepicker" 

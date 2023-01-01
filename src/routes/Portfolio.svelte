@@ -1,15 +1,15 @@
 <div class="row flex-spaces tabs">
     <input id="tab1" type="radio" name="tabs" checked>
-    <label for="tab1">Tab 1</label>
+    <label for="tab1">Тест</label>
   
     <input id="tab2" type="radio" name="tabs">
-    <label for="tab2">Tab 2</label>
+    <label for="tab2">Студии</label>
   
     <input id="tab3" type="radio" name="tabs">
-    <label for="tab3">Tab 3</label>
+    <label for="tab3">Фото</label>
   
     <input id="tab4" type="radio" name="tabs">
-    <label for="tab4">Tab 4</label>
+    <label for="tab4">Журналы</label>
   
     <div class="content" id="content1">
       <p>
@@ -26,34 +26,32 @@
       </p>
     </div>
     <div class="content" id="content3">
+        
       <p>
         Bacon ipsum dolor sit amet beef venison beef ribs kielbasa...
       </p>
-      <p>
-        Brisket meatball turkey short loin boudin leberkas meatloaf...
-      </p>
+      <img src="ph1.png">
+      <img src="ph2.png">
+      <img src="ph3.png">
+      <img src="ph4.png">
+
     </div>
     <div class="content" id="content4">
       <p>
         Bacon ipsum dolor sit amet landjaeger sausage brisket...
       </p>
-    </div>
-  </div>
-
-<p> Публикации в журналах: </p>
-<br>
-<div class="magazine">
+      <br>
+      <div class="magazine">
     
-    <div id="pages" > 
-
+        <div id="pages" > 
+    
+        </div>
+        <img class="pages" src="pages.png">
+    
     </div>
-    <img class="pages" src="pages.png">
+    </div>
 
-</div>
-
-<img src="ph1.png">
-
-<img src="ph4.png">
+  </div>
 
 <script lang="ts">
 
@@ -101,6 +99,14 @@
 
 .tabs{
     margin-top: 60px;
+}
+
+img{
+    margin: 10px;
+}
+
+.content{
+    display: flex;
 }
 
 </style>
