@@ -32,9 +32,9 @@
 		
 	</div>
 
-	<input type="date" >
+	<input type="date" value={new Date()}>
 
-	<input type="time" >
+	<input type="time" value={new Date()}>
 
 
 	{#if selectDateWindow}
