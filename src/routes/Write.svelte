@@ -11,14 +11,9 @@
 		</div>
 		<div class="user-input"> 
 			<p class="label"> Время: </p> 
-			<div>
-				<button on:click={openSelectDateWindow}> 
-					{ formatDate( selected ) }
-				</button>
-		
-				<button on:click={openSelectTimeWindow}> 
-					{hour}:{min} 
-				</button>
+			<div class="is-flex">
+				<input type="date" value={new Date()}>
+				<input type="time" value={new Date()}>
 			</div>
 		</div>
 		<label for="paperRadios1" class="paper-radio">
@@ -31,11 +26,6 @@
 		  </label>
 		
 	</div>
-
-	<input type="date" value={new Date()}>
-
-	<input type="time" value={new Date()}>
-
 
 	{#if selectDateWindow}
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -222,6 +212,29 @@ button{
 .label{
 	margin: 5px;
 	text-align: end;
+}
+
+.is-flex{
+	width: 100% !important;
+	display: flex !important;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.form-group{
+	width: 100%;
+}
+
+input[type="date"]{
+	height: 40px;
+}
+
+input[type="time"]{
+	height: 40px;  
+}
+
+span{
+	font-family: "Patrick Hand SC" !important; 
 }
 
 </style>

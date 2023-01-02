@@ -16,6 +16,7 @@
 	});
 
 	let webApp = window.Telegram.WebApp;
+	webApp.isClosingConfirmationEnabled = true;
 
 	let tgUserInfo = webApp.initDataUnsafe.user;
 
