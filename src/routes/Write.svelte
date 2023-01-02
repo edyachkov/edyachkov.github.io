@@ -234,7 +234,7 @@ input[type="time"]{
 }
 
 span{
-	font-family: "Patrick Hand SC" !important; 
+	font-family: "Neucha" ,sans-serif !important; 
 }
 
 </style>
