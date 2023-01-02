@@ -1,3 +1,30 @@
+<Router url="{url}">
+	<div class="header">
+		<Link to="/about">
+			<button class="btn-small">
+				Обо мне
+			</button>
+		</Link>
+		
+		<Link to="/portfolio">
+			<button class="btn-small">
+				Портфолио
+			</button>
+		</Link>
+		<Link to="/write">
+			<button class="btn-small">
+				Записаться
+			</button>
+		</Link>
+		
+	</div>
+	<div>
+	  	<Route path="portfolio" component="{Portfolio}" />
+	  	<Route path="about" component="{About}" />
+		<Route path="write" component="{Write}" />
+	</div>
+</Router>
+
 <script lang="ts">
 
 	import { Router, Link, Route } from "svelte-routing";
@@ -61,51 +88,28 @@
 
 </script>
 
-<Router url="{url}">
-	<div class="header">
-		<Link to="/about">
-			<button class="btn-small">
-				Обо мне
-			</button>
-		</Link>
-		
-		<Link to="/portfolio">
-			<button class="btn-small">
-				Портфолио
-			</button>
-		</Link>
-		<Link to="/write">
-			<button class="btn-small">
-				Записаться
-			</button>
-		</Link>
-		
-	</div>
-	<div>
-	  	<Route path="portfolio" component="{Portfolio}" />
-	  	<Route path="about" component="{About}" />
-		<Route path="write" component="{Write}" />
-	</div>
-</Router>
-
 <style lang="scss">
 
 @import "./css/paper/paper.min.css";
 
 .header{
-	position: absolute;
-	top: 5px; 
+	position: fixed;
 	left: 0px;
+	top: 0px;
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	z-index: 100;
+	// background-color: rgb(23, 23, 23);
+	// box-shadow: 5px 20px 10px rgb(23, 23, 23);
 }
 
 button{
-	margin: 5px;
+	margin: 10px;
 	height: 40px;
 	font-size: 10px;
 	background-color: #232323;
+	box-shadow: 0px 0px 25px rgb(0, 0, 0);
 }
 
 a {

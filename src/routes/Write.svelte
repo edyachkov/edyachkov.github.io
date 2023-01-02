@@ -32,6 +32,7 @@
 
 <script>
 // @ts-nocheck
+import { onMount } from "svelte";
 
 let selectedDate = new Date();
 let selectedTime = new Date();

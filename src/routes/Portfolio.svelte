@@ -5,6 +5,8 @@
   Топовые журналы в слезах просят прислать им хотя бы одну фотографию. 
 </p>
 
+
+
 <div class="magazine">
     
   <div id="pages" > 
@@ -79,10 +81,11 @@ img{
 }
 
 .article{
-  margin: 30px 10px 30px 10px;
+  margin: 20px 10px 20px 10px;
 }
 
-.main{
+.main {
   margin-top: 70px;
 }
+
 </style>
