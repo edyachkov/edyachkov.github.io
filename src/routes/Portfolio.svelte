@@ -1,4 +1,4 @@
-<p> Иногда меня печтают в журналах, потому что лучше меня никто не фотографирует. 
+<p class="article"> Иногда меня печтают в журналах, потому что лучше меня никто не фотографирует. 
 Топовые журналы в слезах просят прислать им хотя бы одну фотографию. </p>
 
 <div class="magazine">
@@ -6,6 +6,7 @@
   <div id="pages" > 
 
   </div>
+
   <img class="pages" src="pages.png">
 
 </div>
@@ -42,7 +43,7 @@
     border: 0;
     border-radius: 5px;
     box-shadow: 1px 1px 15px rgb(0, 0, 0) ;
-    margin: 5px;
+    margin: 15px;
 }
 
 #pages{
@@ -59,6 +60,10 @@
 
 img{
     margin: 10px; 
+}
+
+.article{
+  margin: 10px;
 }
 
 </style>

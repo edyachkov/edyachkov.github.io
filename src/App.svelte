@@ -25,31 +25,13 @@
 		login: tgUserInfo.username
 	}
 
-	console.log(webApp.initDataUnsafe)
-
 	let backButton = webApp.BackButton;
 	backButton.isVisible = true;
 
-	let mainButton = webApp.MainButton;
-	mainButton.text = "Заказать съёмку";
-	mainButton.isVisible = true;
-	mainButton.color = "#e8e8e8";
-	mainButton.textColor = "#000000";
-	mainButton.onClick( openWritingWindow );
+	
 
 	webApp.setHeaderColor(webApp.themeParams.bg_color)
 
-	function openWritingWindow(){
-
-		const requestOptions = {
-        	method: 'POST',
-        	headers: { 'Content-Type': 'application/json' },
-        	body: JSON.stringify({})
-    	};
-
-    	fetch('http://192.168.1.44:3000/book', requestOptions);
-
-	}
 
 	function openSuccessDialog(){
 
@@ -98,7 +80,6 @@
 			</button>
 		</Link>
 		
-	
 	</div>
 	<div>
 	  	<Route path="portfolio" component="{Portfolio}" />

@@ -12,10 +12,11 @@
 		<div class="user-input"> 
 			<p class="label"> Время: </p> 
 			<div class="is-flex">
-				<input type="date" value={new Date()}>
-				<input type="time" value={new Date()}>
+				<input type="date" bind:value={selectedDate}>
+				<input type="time" bind:value={selectedTime}>
 			</div>
 		</div>
+		
 		<label for="paperRadios1" class="paper-radio">
 			<input type="radio" name="paperRadios" id="paperRadios1" value="option 1"> 
 			<span> Семейная съёмка </span>
@@ -27,102 +28,39 @@
 		
 	</div>
 
-	{#if selectDateWindow}
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<div class="datepicker" 
-			 on:click={getResult} >
-			<Datepicker
-				lang="ru"
-				bind:selected
-				bind:pickerDone
-				reSelected/>
-		</div>
-	{/if}
-
-	{#if selectTimeWindow}
-		<div class="timepicker" >
-			<TimePicker 
-				{options}
-				on:change={onChangeTime}
-				on:cancel={closeTimeWindow}
-  				on:ok={closeTimeWindow} />
-		</div>
-	{/if}
-
 </div> 
 
 <script>
 // @ts-nocheck
-
-
-import { TimePicker } from 'svelte-time-picker'
-import Datepicker from "praecox-datepicker";
-
-let selected = new Date();
-
-let hour = new Date().getHours();
-let min = new Date().getMinutes();
+let selectedDate = new Date();
+let selectedTime = new Date();
 
 let webApp = window.Telegram.WebApp;
 
-	let tgUserInfo = webApp.initDataUnsafe.user;
+let tgUserInfo = webApp.initDataUnsafe.user;
 
-	let user = {
-		name: `${tgUserInfo.first_name} ${tgUserInfo.last_name}`,
-		login: tgUserInfo.username
-	}
-
-
-let options = {
-	bgColor: '#000000',
-    hasButtons: true, 
-	is24h: true,
-	minutesIncrement: 10,
-	buttonCancel: "<p> Отменить </p>",
-	buttonNow: "<p> Сброс </p>",
-	buttonOK: "<p> ОК </p>",
+let user = {
+	name: `${tgUserInfo.first_name} ${tgUserInfo.last_name}`,
+	login: tgUserInfo.username
 }
 
-let pickerDone = false;
+let mainButton = webApp.MainButton;
+	mainButton.text = "Заказать съёмку";
+	mainButton.isVisible = true;
+	mainButton.color = "#e8e8e8";
+	mainButton.textColor = "#000000";
+	mainButton.onClick( openWritingWindow );
 
-let selectDateWindow = false;
-let selectTimeWindow = false;
 
-function openSelectDateWindow(){
-	selectDateWindow = !selectDateWindow;
-}
+function openWritingWindow(){
 
-function closeTimeWindow(){
-	selectTimeWindow = false;
-}
+	const requestOptions = {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({})
+	};
 
-function openSelectTimeWindow(){
-	selectTimeWindow = !selectTimeWindow;
-}
-
-function formatDate( v ) {
-
-    let date = new Date(v);
-    let year = date.getFullYear();
-    let month = date.getMonth() + 1;
-    let day = date.getDate();
-
-    return `${day}/${month}/${year}`;
-
-}
-
-function onChangeTime( event ){
-
-    hour = new Date( event.detail ).getHours();
-	min = new Date( event.detail ).getMinutes();
-
-}
-
-function getResult() {
-
-    if ( pickerDone ) {
-		selectDateWindow = false;
-    }
+	fetch('http://192.168.1.44:3000/book', requestOptions);
 
 }
 
