@@ -1,57 +1,14 @@
-<div class="row flex-spaces tabs">
-    <input id="tab1" type="radio" name="tabs" checked>
-    <label for="tab1">Тест</label>
-  
-    <input id="tab2" type="radio" name="tabs">
-    <label for="tab2">Студии</label>
-  
-    <input id="tab3" type="radio" name="tabs">
-    <label for="tab3">Фото</label>
-  
-    <input id="tab4" type="radio" name="tabs">
-    <label for="tab4">Журналы</label>
-  
-    <div class="content" id="content1">
-      <p>
-        Я публикуюсь в журналах, я молодец
-        Bacon ipsum dolor sit amet beef venison beef ribs kielbasa...
-      </p>
-      <p>
-        Brisket meatball turkey short loin boudin leberkas meatloaf...
-      </p>
-    </div>
-    <div class="content" id="content2">
-      <p>
-        Bacon ipsum dolor sit amet landjaeger sausage brisket...
-      </p>
-    </div>
-    <div class="content" id="content3">
-        
-      <p>
-        Bacon ipsum dolor sit amet beef venison beef ribs kielbasa...
-      </p>
-      <img src="ph1.png">
-      <img src="ph2.png">
-      <img src="ph3.png">
-      <img src="ph4.png">
+<p> Иногда меня печтают в журналах, потому что лучше меня никто не фотографирует. 
+Топовые журналы в слезах просят прислать им хотя бы одну фотографию. </p>
 
-    </div>
-    <div class="content" id="content4">
-      <p>
-        Bacon ipsum dolor sit amet landjaeger sausage brisket...
-      </p>
-      <br>
-      <div class="magazine">
+<div class="magazine">
     
-        <div id="pages" > 
-    
-        </div>
-        <img class="pages" src="pages.png">
-    
-    </div>
-    </div>
+  <div id="pages" > 
 
   </div>
+  <img class="pages" src="pages.png">
+
+</div>
 
 <script lang="ts">
 
@@ -84,6 +41,8 @@
     background-color: rgb(147, 147, 147);
     border: 0;
     border-radius: 5px;
+    box-shadow: 1px 1px 15px rgb(0, 0, 0) ;
+    margin: 5px;
 }
 
 #pages{
@@ -95,18 +54,11 @@
 .pages{
     height: 436px;
     border: 0;
-}
-
-.tabs{
-    margin-top: 60px;
+    margin: 0;
 }
 
 img{
-    margin: 10px;
-}
-
-.content{
-    display: flex;
+    margin: 10px; 
 }
 
 </style>
