@@ -32,8 +32,15 @@
 
 <script>
 // @ts-nocheck
+
 let selectedDate = new Date();
 let selectedTime = new Date();
+
+onMount(() => {
+	selectedDate = new Date();
+	selectedTime = new Date();
+});
+
 
 let webApp = window.Telegram.WebApp;
 
